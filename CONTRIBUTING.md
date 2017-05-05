@@ -29,6 +29,9 @@ This is a rough outline of what a contributor's workflow looks like:
 - Make sure all tests pass, and add any new tests as appropriate.
 - Submit a pull request to the original repository.
 
+For detailed contribution flow instructions for Rook, refer to
+the <a href="https://github.com/rook/rook/blob/master/Documentation/development-flow.md">development-flow</a>
+
 ## Coding Style
 
 Rook projects are written in golang and follows the style guidelines dictated by
