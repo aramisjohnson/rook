@@ -47,11 +47,11 @@ Checkout your forked branch and merge it with the upstream repo's master branch:
 ```bash
 # Checkout your master branch and merge upstream
 git checkout master
-git merge upstream/master
+git rebase upstream/master
 ```
 
 # Working
-To begin add a a feature of to make a bug fix do the following.
+To add a feature or to make a bug fix in your fork do the following.
 
 ## Create a Branch
 
@@ -68,20 +68,20 @@ git checkout newfeature
 ```
 
 # Submitting a Pull Request
-Now that you have created your new feature or fixed and issue below is the process for adding your changes to 
-rook/rook.
+Now that you have created your new feature or fixed and issue, below is the process for submitting your changes to 
+the rook/rook repo.
 
 ## Regression Testing
 All pull requests must not cause the results of the unit and e2e smoke tests to regress. These tests automatically
-get ran as a part of the build process and the results of these tests along with code reviews determine whether
-your request will be accepted. It is prudent to run both locally on your development box prior to submitting a pull request.
+run as a part of the build process and the results of these tests along with code reviews and other criterias determine whether
+your request will be accepted into the rook/rook repo. It is prudent to run all tests locally on your development box prior to submitting a pull request to the rook/rook repo.
 
 ### Running the Unit Tests
 From the root of your local rook repo execute the following;
 ```bash
 make test
 ```
-The unit tests will run and the output will tell you if the results.
+The unit tests will run and the output will tell you if the tests succeeded or not.
 
 
 ### Running the Smoke E2E Tests
