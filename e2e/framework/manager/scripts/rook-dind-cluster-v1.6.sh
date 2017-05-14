@@ -144,7 +144,7 @@ function dind::prepare-sys-mounts {
       sys_volume_args+=(-v /dev:/dev)
     fi
     if [[ -d /sys ]]; then
-      sys_volume_args+=(-v /sys/bus:/sys/bus)
+      sys_volume_args+=(-v /sys:/sys)
     fi
     if [[ -d /var/run/docker.sock ]]; then
       sys_volume_args+=(-v /var/run/docker.sock:/var/run/docker.sock)
@@ -399,8 +399,9 @@ function dind::run {
          --hostname "${container_name}" \
          -l mirantis.kubeadm_dind_cluster \
          -v ${volume_name}:/dind \
+         -v /sys:/sys \
          -v /dev:/dev \
-         -v /var/run/docker.sock:/opt/outer-docker.sock \
+         -v /tmp/docker.sock:/opt/outer-docker.sock \
          ${opts[@]+"${opts[@]}"} \
          "${DIND_IMAGE}" \
          ${args[@]+"${args[@]}"}
